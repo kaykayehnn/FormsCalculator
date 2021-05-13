@@ -34,7 +34,7 @@ namespace FormsCalculator
             this.buttonEquals = new System.Windows.Forms.Button();
             this.buttonPeriod = new System.Windows.Forms.Button();
             this.button0 = new System.Windows.Forms.Button();
-            this.buttonNegateSign = new System.Windows.Forms.Button();
+            this.buttonInvertSign = new System.Windows.Forms.Button();
             this.buttonCE = new System.Windows.Forms.Button();
             this.buttonPercent = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
@@ -63,8 +63,8 @@ namespace FormsCalculator
             this.showToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.priorityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.algebraicToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lefttorightToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.algebraicToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.tableLayoutPanel.SuspendLayout();
@@ -81,7 +81,7 @@ namespace FormsCalculator
             this.tableLayoutPanel.Controls.Add(this.buttonEquals, 3, 6);
             this.tableLayoutPanel.Controls.Add(this.buttonPeriod, 2, 6);
             this.tableLayoutPanel.Controls.Add(this.button0, 1, 6);
-            this.tableLayoutPanel.Controls.Add(this.buttonNegateSign, 0, 6);
+            this.tableLayoutPanel.Controls.Add(this.buttonInvertSign, 0, 6);
             this.tableLayoutPanel.Controls.Add(this.buttonCE, 1, 1);
             this.tableLayoutPanel.Controls.Add(this.buttonPercent, 0, 1);
             this.tableLayoutPanel.Controls.Add(this.button9, 1, 3);
@@ -170,21 +170,21 @@ namespace FormsCalculator
             this.button0.UseVisualStyleBackColor = false;
             this.button0.Click += new System.EventHandler(this.HandleNumberButtonClick);
             // 
-            // buttonNegateSign
+            // buttonInvertSign
             // 
-            this.buttonNegateSign.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.buttonNegateSign.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonNegateSign.FlatAppearance.BorderSize = 0;
-            this.buttonNegateSign.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
-            this.buttonNegateSign.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonNegateSign.Location = new System.Drawing.Point(2, 412);
-            this.buttonNegateSign.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonNegateSign.Name = "buttonNegateSign";
-            this.buttonNegateSign.Size = new System.Drawing.Size(77, 63);
-            this.buttonNegateSign.TabIndex = 35;
-            this.buttonNegateSign.Text = "⁺∕₋";
-            this.buttonNegateSign.UseVisualStyleBackColor = false;
-            this.buttonNegateSign.Click += new System.EventHandler(this.HandleNegateSign);
+            this.buttonInvertSign.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.buttonInvertSign.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonInvertSign.FlatAppearance.BorderSize = 0;
+            this.buttonInvertSign.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+            this.buttonInvertSign.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonInvertSign.Location = new System.Drawing.Point(2, 412);
+            this.buttonInvertSign.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonInvertSign.Name = "buttonInvertSign";
+            this.buttonInvertSign.Size = new System.Drawing.Size(77, 63);
+            this.buttonInvertSign.TabIndex = 35;
+            this.buttonInvertSign.Text = "⁺∕₋";
+            this.buttonInvertSign.UseVisualStyleBackColor = false;
+            this.buttonInvertSign.Click += new System.EventHandler(this.HandleInvertSign);
             // 
             // buttonCE
             // 
@@ -595,19 +595,19 @@ namespace FormsCalculator
             this.priorityToolStripMenuItem.Size = new System.Drawing.Size(70, 24);
             this.priorityToolStripMenuItem.Text = "Priority";
             // 
-            // algebraicToolStripMenuItem
-            // 
-            this.algebraicToolStripMenuItem.Name = "algebraicToolStripMenuItem";
-            this.algebraicToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.algebraicToolStripMenuItem.Text = "Algebraic";
-            this.algebraicToolStripMenuItem.Click += new System.EventHandler(this.SetAlgebraicPriority);
-            // 
             // lefttorightToolStripMenuItem
             // 
             this.lefttorightToolStripMenuItem.Name = "lefttorightToolStripMenuItem";
-            this.lefttorightToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.lefttorightToolStripMenuItem.Size = new System.Drawing.Size(174, 26);
             this.lefttorightToolStripMenuItem.Text = "Left-to-right";
             this.lefttorightToolStripMenuItem.Click += new System.EventHandler(this.SetLeftToRightPriority);
+            // 
+            // algebraicToolStripMenuItem
+            // 
+            this.algebraicToolStripMenuItem.Name = "algebraicToolStripMenuItem";
+            this.algebraicToolStripMenuItem.Size = new System.Drawing.Size(174, 26);
+            this.algebraicToolStripMenuItem.Text = "Algebraic";
+            this.algebraicToolStripMenuItem.Click += new System.EventHandler(this.SetAlgebraicPriority);
             // 
             // saveFileDialog
             // 
@@ -663,7 +663,7 @@ namespace FormsCalculator
         private System.Windows.Forms.Button buttonEquals;
         private System.Windows.Forms.Button buttonPeriod;
         private System.Windows.Forms.Button button0;
-        private System.Windows.Forms.Button buttonNegateSign;
+        private System.Windows.Forms.Button buttonInvertSign;
         private System.Windows.Forms.Button buttonCE;
         private System.Windows.Forms.Button buttonPercent;
         private System.Windows.Forms.Button button3;

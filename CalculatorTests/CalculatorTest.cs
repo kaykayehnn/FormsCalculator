@@ -119,10 +119,10 @@ namespace CalculatorTests
         }
 
         [TestMethod]
-        public void TestNegateSign()
+        public void TestInvertSign()
         {
             calc.EnterKey('4');
-            calc.EnterOperator(Operator.NegateSign);
+            calc.InvertSign();
 
             var result = calc.Calculate();
             var expected = -4;
@@ -561,6 +561,33 @@ namespace CalculatorTests
 
             var result = calc.GetCurrentOperand();
             var expected = "0";
+
+            Assert.AreEqual(result, expected);
+        }
+
+        // TODO: add invert sign tests after equals
+        [TestMethod]
+        public void InvertSign()
+        {
+            calc.EnterKey('1');
+            calc.InvertSign();
+
+            var result = calc.GetCurrentOperand();
+            var expected = "-1";
+
+            Assert.AreEqual(result, expected);
+        }
+
+        [TestMethod]
+        public void InvertSignInOperation()
+        {
+            calc.EnterKey('1');
+            calc.EnterOperator(Operator.Addition);
+            calc.EnterKey('4');
+            calc.InvertSign();
+
+            var result = calc.Calculate();
+            var expected = -3;
 
             Assert.AreEqual(result, expected);
         }

@@ -119,9 +119,24 @@ namespace FormsCalculator
             showEquals = false;
         }
 
+        public void InvertSign()
+        {
+            // TODO: can we do this without using strings?
+            if (this.currentOperand == DEFAULT_OPERAND) return;
+
+            if (this.showEquals)
+            {
+                // TODO: delete previous history and invert sign
+            }
+
+            var operand = double.Parse(this.currentOperand);
+            var inverted = -operand;
+
+            this.currentOperand = inverted.ToString();
+        }
+
         public void EnterOperator(Operator op)
         {
-            // TODO: handle negate sign
             // TODO: handle sqrt
             // TODO: handle percent sign
             // Base case

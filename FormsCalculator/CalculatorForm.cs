@@ -127,9 +127,9 @@ namespace FormsCalculator
             calculator.EnterOperator(Operator.Sqrt);
         }
 
-        private void HandleNegateSign(object sender, EventArgs e)
+        private void HandleInvertSign(object sender, EventArgs e)
         {
-            calculator.EnterOperator(Operator.NegateSign);
+            calculator.InvertSign();
         }
 
         private void HandleClearEntry(object sender, EventArgs e)

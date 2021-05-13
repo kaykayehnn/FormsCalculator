@@ -10,7 +10,6 @@ namespace FormsCalculator
         Division,
         Power,
         Sqrt,
-        NegateSign,
         Percent
     }
 
