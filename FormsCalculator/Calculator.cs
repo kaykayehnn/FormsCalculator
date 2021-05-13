@@ -1,7 +1,8 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace FormsCalculator
@@ -25,8 +26,8 @@ namespace FormsCalculator
         // We need to handle repeatedly pressing equals and think how it should be
         // displayed in the equation bar.
         private const string DEFAULT_OPERAND = "0";
-        private const char DECIMAL_SEPARATOR = '.';
-        private const char THOUSANDS_SEPARATOR = ',';
+        private readonly string DECIMAL_SEPARATOR = Thread.CurrentThread.CurrentCulture.NumberFormat.NumberDecimalSeparator;
+        private readonly string THOUSANDS_SEPARATOR = Thread.CurrentThread.CurrentCulture.NumberFormat.NumberGroupSeparator;
 
         private string currentOperand;
         private bool isOperandTouched;

@@ -441,7 +441,7 @@ namespace CalculatorTests
             calc.Calculate();
 
             var result = calc.GetEquation();
-            var expected = "4 + 5 × 6 ÷ 7 - 8^9 =";
+            var expected = "4 + 5 ï¿½ 6 ï¿½ 7 - 8^9 =";
 
             Assert.AreEqual(result, expected);
         }
@@ -534,6 +534,7 @@ namespace CalculatorTests
 
         [TestMethod]
         [TestCategory("Formatting")]
+        // This test needs to be locale-independent
         public void TestPositiveFormatting()
         {
             calc.EnterKey('1');
@@ -546,7 +547,7 @@ namespace CalculatorTests
             calc.EnterKey('7');
 
             var result = calc.GetCurrentOperand();
-            var expected = "12,345.67";
+            var expected = 12345.67.ToString("N");
 
             Assert.AreEqual(result, expected);
         }
