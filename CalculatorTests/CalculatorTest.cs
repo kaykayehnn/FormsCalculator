@@ -107,6 +107,20 @@ namespace CalculatorTests
         }
 
         [TestMethod]
+        public void TestComplexSqrt()
+        {
+            calc.EnterKey('4');
+            calc.EnterOperator(Operator.Addition);
+            calc.EnterKey('4'); 
+            calc.EnterOperator(Operator.Sqrt);
+
+            var result = calc.Calculate();
+            var expected = 4 + Math.Sqrt(4);
+
+            Assert.AreEqual(result, expected);
+        }
+
+        [TestMethod]
         public void TestPercentSign()
         {
             calc.EnterKey('4');
@@ -441,7 +455,7 @@ namespace CalculatorTests
             calc.Calculate();
 
             var result = calc.GetEquation();
-            var expected = "4 + 5 ï¿½ 6 ï¿½ 7 - 8^9 =";
+            var expected = "4 + 5 × 6 ÷ 7 - 8^9 =";
 
             Assert.AreEqual(result, expected);
         }
