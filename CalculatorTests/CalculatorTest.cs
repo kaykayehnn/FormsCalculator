@@ -125,9 +125,9 @@ namespace CalculatorTests
         public void TestPercentSign()
         {
             calc.EnterKey('4');
-            calc.EnterOperator(Operator.Percent);
+            calc.Percentify();
 
-            var result = calc.Calculate();
+            var result = calc.GetCurrentOperand();
             var expected = 0.04;
 
             Assert.AreEqual(result, expected);
@@ -456,7 +456,7 @@ namespace CalculatorTests
             calc.Calculate();
 
             var result = calc.GetEquation();
-            var expected = "4 + 5 ï¿½ 6 ï¿½ 7 - 8^9 =";
+            var expected = "4 + 5 × 6 ÷ 7 - 8^9 =";
 
             Assert.AreEqual(result, expected);
         }

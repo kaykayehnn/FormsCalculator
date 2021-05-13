@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -243,6 +243,12 @@ namespace FormsCalculator
                 historyForm.UpdateHistory(history.ToArray());
             }
         }
+
+        private void HandlePercent(object sender, EventArgs e)
+        {
+            calculator.Percentify();
+        }
+
         private void SetAlgebraicPriority(object sender, EventArgs e)
         {
             SetPriorityMode(PriorityMode.Algebraic);

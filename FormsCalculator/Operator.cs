@@ -10,7 +10,6 @@ namespace FormsCalculator
         Division,
         Power,
         Sqrt,
-        Percent
     }
 
     static class OperatorHelpers

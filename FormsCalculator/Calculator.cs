@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -234,14 +234,22 @@ namespace FormsCalculator
             showEquals = false;
         }
 
-        private void HandlePercent()
+        public void Percentify()
         {
-            throw new NotImplementedException();
-        }
+            // TODO: the initial implementation of this operation will simply
+            // divide the current operand by 100. Later we can improve this to
+            // act as a modifier in other operations.
 
-        private void HandleNegateSign()
-        {
-            throw new NotImplementedException();
+            // TODO: can we do this without using strings?
+            if (this.showEquals)
+            {
+                // TODO: delete previous history and invert sign
+            }
+
+            var operand = double.Parse(this.currentOperand);
+            var percent = operand / 100;
+
+            this.currentOperand = percent.ToString();
         }
 
         public double Calculate()
