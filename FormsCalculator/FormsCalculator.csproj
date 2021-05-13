@@ -63,6 +63,7 @@
     <Compile Include="Operand.cs" />
     <Compile Include="Operation.cs" />
     <Compile Include="Operator.cs" />
+    <Compile Include="PriorityMode.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CalculatorForm.resx">

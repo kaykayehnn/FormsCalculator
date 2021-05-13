@@ -16,8 +16,15 @@ namespace FormsCalculator
 
     static class OperatorHelpers
     {
-        public static int GetPriority(Operator op)
+        public static int GetPriority(Operator op, PriorityMode priorityMode)
         {
+            if(priorityMode == PriorityMode.LeftToRight)
+            {
+                // All operations have equal priority in LeftToRight mode, so
+                // we return a constant priority for all of them.
+                return 0;
+            }
+
             switch (op)
             {
                 case Operator.Addition:

@@ -58,11 +58,14 @@ namespace FormsCalculator
             this.richTextBoxResult = new System.Windows.Forms.RichTextBox();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.historyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.clearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.priorityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.algebraicToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lefttorightToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.tableLayoutPanel.SuspendLayout();
             this.menuStrip.SuspendLayout();
@@ -101,7 +104,7 @@ namespace FormsCalculator
             this.tableLayoutPanel.Controls.Add(this.button1, 0, 5);
             this.tableLayoutPanel.Controls.Add(this.richTextBoxResult, 0, 0);
             this.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel.Location = new System.Drawing.Point(0, 24);
+            this.tableLayoutPanel.Location = new System.Drawing.Point(0, 28);
             this.tableLayoutPanel.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.tableLayoutPanel.Name = "tableLayoutPanel";
             this.tableLayoutPanel.RowCount = 7;
@@ -113,7 +116,7 @@ namespace FormsCalculator
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.33333F));
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.33333F));
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel.Size = new System.Drawing.Size(327, 481);
+            this.tableLayoutPanel.Size = new System.Drawing.Size(327, 477);
             this.tableLayoutPanel.TabIndex = 5;
             // 
             // buttonEquals
@@ -124,10 +127,10 @@ namespace FormsCalculator
             this.buttonEquals.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.buttonEquals.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonEquals.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEquals.Location = new System.Drawing.Point(245, 418);
+            this.buttonEquals.Location = new System.Drawing.Point(245, 412);
             this.buttonEquals.Margin = new System.Windows.Forms.Padding(2);
             this.buttonEquals.Name = "buttonEquals";
-            this.buttonEquals.Size = new System.Drawing.Size(80, 61);
+            this.buttonEquals.Size = new System.Drawing.Size(80, 63);
             this.buttonEquals.TabIndex = 38;
             this.buttonEquals.Text = "=";
             this.buttonEquals.UseVisualStyleBackColor = false;
@@ -141,10 +144,10 @@ namespace FormsCalculator
             this.buttonPeriod.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.buttonPeriod.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonPeriod.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonPeriod.Location = new System.Drawing.Point(164, 418);
+            this.buttonPeriod.Location = new System.Drawing.Point(164, 412);
             this.buttonPeriod.Margin = new System.Windows.Forms.Padding(2);
             this.buttonPeriod.Name = "buttonPeriod";
-            this.buttonPeriod.Size = new System.Drawing.Size(77, 61);
+            this.buttonPeriod.Size = new System.Drawing.Size(77, 63);
             this.buttonPeriod.TabIndex = 37;
             this.buttonPeriod.Text = ".";
             this.buttonPeriod.UseVisualStyleBackColor = false;
@@ -158,10 +161,10 @@ namespace FormsCalculator
             this.button0.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.button0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button0.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button0.Location = new System.Drawing.Point(83, 418);
+            this.button0.Location = new System.Drawing.Point(83, 412);
             this.button0.Margin = new System.Windows.Forms.Padding(2);
             this.button0.Name = "button0";
-            this.button0.Size = new System.Drawing.Size(77, 61);
+            this.button0.Size = new System.Drawing.Size(77, 63);
             this.button0.TabIndex = 36;
             this.button0.Text = "0";
             this.button0.UseVisualStyleBackColor = false;
@@ -174,10 +177,10 @@ namespace FormsCalculator
             this.buttonNegateSign.FlatAppearance.BorderSize = 0;
             this.buttonNegateSign.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.buttonNegateSign.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonNegateSign.Location = new System.Drawing.Point(2, 418);
+            this.buttonNegateSign.Location = new System.Drawing.Point(2, 412);
             this.buttonNegateSign.Margin = new System.Windows.Forms.Padding(2);
             this.buttonNegateSign.Name = "buttonNegateSign";
-            this.buttonNegateSign.Size = new System.Drawing.Size(77, 61);
+            this.buttonNegateSign.Size = new System.Drawing.Size(77, 63);
             this.buttonNegateSign.TabIndex = 35;
             this.buttonNegateSign.Text = "⁺∕₋";
             this.buttonNegateSign.UseVisualStyleBackColor = false;
@@ -190,10 +193,10 @@ namespace FormsCalculator
             this.buttonCE.FlatAppearance.BorderSize = 0;
             this.buttonCE.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.buttonCE.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCE.Location = new System.Drawing.Point(83, 98);
+            this.buttonCE.Location = new System.Drawing.Point(83, 97);
             this.buttonCE.Margin = new System.Windows.Forms.Padding(2);
             this.buttonCE.Name = "buttonCE";
-            this.buttonCE.Size = new System.Drawing.Size(77, 60);
+            this.buttonCE.Size = new System.Drawing.Size(77, 59);
             this.buttonCE.TabIndex = 34;
             this.buttonCE.Text = "CE";
             this.buttonCE.UseVisualStyleBackColor = false;
@@ -206,13 +209,14 @@ namespace FormsCalculator
             this.buttonPercent.FlatAppearance.BorderSize = 0;
             this.buttonPercent.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.buttonPercent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonPercent.Location = new System.Drawing.Point(2, 98);
+            this.buttonPercent.Location = new System.Drawing.Point(2, 97);
             this.buttonPercent.Margin = new System.Windows.Forms.Padding(2);
             this.buttonPercent.Name = "buttonPercent";
-            this.buttonPercent.Size = new System.Drawing.Size(77, 60);
+            this.buttonPercent.Size = new System.Drawing.Size(77, 59);
             this.buttonPercent.TabIndex = 33;
             this.buttonPercent.Text = "%";
             this.buttonPercent.UseVisualStyleBackColor = false;
+            this.buttonPercent.Click += new System.EventHandler(this.HandlePercent);
             // 
             // button9
             // 
@@ -222,10 +226,10 @@ namespace FormsCalculator
             this.button9.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button9.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.Location = new System.Drawing.Point(164, 226);
+            this.button9.Location = new System.Drawing.Point(164, 223);
             this.button9.Margin = new System.Windows.Forms.Padding(2);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(77, 60);
+            this.button9.Size = new System.Drawing.Size(77, 59);
             this.button9.TabIndex = 32;
             this.button9.Text = "9";
             this.button9.UseVisualStyleBackColor = false;
@@ -239,10 +243,10 @@ namespace FormsCalculator
             this.button8.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Location = new System.Drawing.Point(83, 226);
+            this.button8.Location = new System.Drawing.Point(83, 223);
             this.button8.Margin = new System.Windows.Forms.Padding(2);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(77, 60);
+            this.button8.Size = new System.Drawing.Size(77, 59);
             this.button8.TabIndex = 31;
             this.button8.Text = "8";
             this.button8.UseVisualStyleBackColor = false;
@@ -256,10 +260,10 @@ namespace FormsCalculator
             this.button7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(2, 226);
+            this.button7.Location = new System.Drawing.Point(2, 223);
             this.button7.Margin = new System.Windows.Forms.Padding(2);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(77, 60);
+            this.button7.Size = new System.Drawing.Size(77, 59);
             this.button7.TabIndex = 30;
             this.button7.Text = "7";
             this.button7.UseVisualStyleBackColor = false;
@@ -273,10 +277,10 @@ namespace FormsCalculator
             this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(164, 290);
+            this.button6.Location = new System.Drawing.Point(164, 286);
             this.button6.Margin = new System.Windows.Forms.Padding(2);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(77, 60);
+            this.button6.Size = new System.Drawing.Size(77, 59);
             this.button6.TabIndex = 29;
             this.button6.Text = "6";
             this.button6.UseVisualStyleBackColor = false;
@@ -290,10 +294,10 @@ namespace FormsCalculator
             this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(83, 290);
+            this.button5.Location = new System.Drawing.Point(83, 286);
             this.button5.Margin = new System.Windows.Forms.Padding(2);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(77, 60);
+            this.button5.Size = new System.Drawing.Size(77, 59);
             this.button5.TabIndex = 28;
             this.button5.Text = "5";
             this.button5.UseVisualStyleBackColor = false;
@@ -307,10 +311,10 @@ namespace FormsCalculator
             this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(2, 290);
+            this.button4.Location = new System.Drawing.Point(2, 286);
             this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(77, 60);
+            this.button4.Size = new System.Drawing.Size(77, 59);
             this.button4.TabIndex = 27;
             this.button4.Text = "4";
             this.button4.UseVisualStyleBackColor = false;
@@ -324,10 +328,10 @@ namespace FormsCalculator
             this.buttonAddition.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.buttonAddition.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAddition.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAddition.Location = new System.Drawing.Point(245, 354);
+            this.buttonAddition.Location = new System.Drawing.Point(245, 349);
             this.buttonAddition.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAddition.Name = "buttonAddition";
-            this.buttonAddition.Size = new System.Drawing.Size(80, 60);
+            this.buttonAddition.Size = new System.Drawing.Size(80, 59);
             this.buttonAddition.TabIndex = 25;
             this.buttonAddition.Text = "+";
             this.buttonAddition.UseVisualStyleBackColor = false;
@@ -341,10 +345,10 @@ namespace FormsCalculator
             this.buttonSubtraction.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.buttonSubtraction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSubtraction.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSubtraction.Location = new System.Drawing.Point(245, 290);
+            this.buttonSubtraction.Location = new System.Drawing.Point(245, 286);
             this.buttonSubtraction.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSubtraction.Name = "buttonSubtraction";
-            this.buttonSubtraction.Size = new System.Drawing.Size(80, 60);
+            this.buttonSubtraction.Size = new System.Drawing.Size(80, 59);
             this.buttonSubtraction.TabIndex = 24;
             this.buttonSubtraction.Text = "-";
             this.buttonSubtraction.UseVisualStyleBackColor = false;
@@ -358,10 +362,10 @@ namespace FormsCalculator
             this.buttonMultiplication.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.buttonMultiplication.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonMultiplication.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonMultiplication.Location = new System.Drawing.Point(245, 226);
+            this.buttonMultiplication.Location = new System.Drawing.Point(245, 223);
             this.buttonMultiplication.Margin = new System.Windows.Forms.Padding(2);
             this.buttonMultiplication.Name = "buttonMultiplication";
-            this.buttonMultiplication.Size = new System.Drawing.Size(80, 60);
+            this.buttonMultiplication.Size = new System.Drawing.Size(80, 59);
             this.buttonMultiplication.TabIndex = 20;
             this.buttonMultiplication.Text = "×";
             this.buttonMultiplication.UseVisualStyleBackColor = false;
@@ -375,10 +379,10 @@ namespace FormsCalculator
             this.buttonDivision.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.buttonDivision.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDivision.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDivision.Location = new System.Drawing.Point(245, 162);
+            this.buttonDivision.Location = new System.Drawing.Point(245, 160);
             this.buttonDivision.Margin = new System.Windows.Forms.Padding(2);
             this.buttonDivision.Name = "buttonDivision";
-            this.buttonDivision.Size = new System.Drawing.Size(80, 60);
+            this.buttonDivision.Size = new System.Drawing.Size(80, 59);
             this.buttonDivision.TabIndex = 16;
             this.buttonDivision.Text = "÷";
             this.buttonDivision.UseVisualStyleBackColor = false;
@@ -392,10 +396,10 @@ namespace FormsCalculator
             this.buttonSquareRoot.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.buttonSquareRoot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSquareRoot.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSquareRoot.Location = new System.Drawing.Point(164, 162);
+            this.buttonSquareRoot.Location = new System.Drawing.Point(164, 160);
             this.buttonSquareRoot.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSquareRoot.Name = "buttonSquareRoot";
-            this.buttonSquareRoot.Size = new System.Drawing.Size(77, 60);
+            this.buttonSquareRoot.Size = new System.Drawing.Size(77, 59);
             this.buttonSquareRoot.TabIndex = 15;
             this.buttonSquareRoot.Text = "√𝑥";
             this.buttonSquareRoot.UseVisualStyleBackColor = false;
@@ -408,10 +412,10 @@ namespace FormsCalculator
             this.buttonPower.FlatAppearance.BorderSize = 0;
             this.buttonPower.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.buttonPower.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonPower.Location = new System.Drawing.Point(83, 162);
+            this.buttonPower.Location = new System.Drawing.Point(83, 160);
             this.buttonPower.Margin = new System.Windows.Forms.Padding(2);
             this.buttonPower.Name = "buttonPower";
-            this.buttonPower.Size = new System.Drawing.Size(77, 60);
+            this.buttonPower.Size = new System.Drawing.Size(77, 59);
             this.buttonPower.TabIndex = 14;
             this.buttonPower.Text = "𝑥ʸ";
             this.buttonPower.UseVisualStyleBackColor = false;
@@ -424,10 +428,10 @@ namespace FormsCalculator
             this.buttonFraction.FlatAppearance.BorderSize = 0;
             this.buttonFraction.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.buttonFraction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonFraction.Location = new System.Drawing.Point(2, 162);
+            this.buttonFraction.Location = new System.Drawing.Point(2, 160);
             this.buttonFraction.Margin = new System.Windows.Forms.Padding(2);
             this.buttonFraction.Name = "buttonFraction";
-            this.buttonFraction.Size = new System.Drawing.Size(77, 60);
+            this.buttonFraction.Size = new System.Drawing.Size(77, 59);
             this.buttonFraction.TabIndex = 13;
             this.buttonFraction.Text = "¹/𝑥";
             this.buttonFraction.UseVisualStyleBackColor = false;
@@ -440,10 +444,10 @@ namespace FormsCalculator
             this.buttonBackspace.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.buttonBackspace.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBackspace.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonBackspace.Location = new System.Drawing.Point(245, 98);
+            this.buttonBackspace.Location = new System.Drawing.Point(245, 97);
             this.buttonBackspace.Margin = new System.Windows.Forms.Padding(2);
             this.buttonBackspace.Name = "buttonBackspace";
-            this.buttonBackspace.Size = new System.Drawing.Size(80, 60);
+            this.buttonBackspace.Size = new System.Drawing.Size(80, 59);
             this.buttonBackspace.TabIndex = 12;
             this.buttonBackspace.Text = "⌫";
             this.buttonBackspace.UseVisualStyleBackColor = false;
@@ -456,10 +460,10 @@ namespace FormsCalculator
             this.buttonC.FlatAppearance.BorderSize = 0;
             this.buttonC.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.buttonC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonC.Location = new System.Drawing.Point(164, 98);
+            this.buttonC.Location = new System.Drawing.Point(164, 97);
             this.buttonC.Margin = new System.Windows.Forms.Padding(2);
             this.buttonC.Name = "buttonC";
-            this.buttonC.Size = new System.Drawing.Size(77, 60);
+            this.buttonC.Size = new System.Drawing.Size(77, 59);
             this.buttonC.TabIndex = 11;
             this.buttonC.Text = "C";
             this.buttonC.UseVisualStyleBackColor = false;
@@ -473,10 +477,10 @@ namespace FormsCalculator
             this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(164, 354);
+            this.button3.Location = new System.Drawing.Point(164, 349);
             this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(77, 60);
+            this.button3.Size = new System.Drawing.Size(77, 59);
             this.button3.TabIndex = 4;
             this.button3.Text = "3";
             this.button3.UseVisualStyleBackColor = false;
@@ -490,10 +494,10 @@ namespace FormsCalculator
             this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(83, 354);
+            this.button2.Location = new System.Drawing.Point(83, 349);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(77, 60);
+            this.button2.Size = new System.Drawing.Size(77, 59);
             this.button2.TabIndex = 4;
             this.button2.Text = "2";
             this.button2.UseVisualStyleBackColor = false;
@@ -507,10 +511,10 @@ namespace FormsCalculator
             this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(2, 354);
+            this.button1.Location = new System.Drawing.Point(2, 349);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(77, 60);
+            this.button1.Size = new System.Drawing.Size(77, 59);
             this.button1.TabIndex = 2;
             this.button1.Text = "1";
             this.button1.UseVisualStyleBackColor = false;
@@ -526,17 +530,19 @@ namespace FormsCalculator
             this.richTextBoxResult.Margin = new System.Windows.Forms.Padding(0);
             this.richTextBoxResult.Name = "richTextBoxResult";
             this.richTextBoxResult.ReadOnly = true;
-            this.richTextBoxResult.Size = new System.Drawing.Size(327, 96);
+            this.richTextBoxResult.Size = new System.Drawing.Size(327, 95);
             this.richTextBoxResult.TabIndex = 26;
             this.richTextBoxResult.Text = "";
             // 
             // menuStrip
             // 
+            this.menuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.historyToolStripMenuItem});
+            this.historyToolStripMenuItem,
+            this.priorityToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(327, 24);
+            this.menuStrip.Size = new System.Drawing.Size(327, 28);
             this.menuStrip.TabIndex = 6;
             this.menuStrip.Text = "menuStrip";
             // 
@@ -549,15 +555,59 @@ namespace FormsCalculator
             this.clearToolStripMenuItem});
             this.historyToolStripMenuItem.Name = "historyToolStripMenuItem";
             this.historyToolStripMenuItem.ShortcutKeyDisplayString = "";
-            this.historyToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.historyToolStripMenuItem.Size = new System.Drawing.Size(70, 24);
             this.historyToolStripMenuItem.Text = "History";
+            // 
+            // openToolStripMenuItem
+            // 
+            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
+            this.openToolStripMenuItem.Text = "Open...";
+            this.openToolStripMenuItem.Click += new System.EventHandler(this.HandleOpenHistory);
+            // 
+            // saveAsToolStripMenuItem
+            // 
+            this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
+            this.saveAsToolStripMenuItem.Text = "Save As...";
+            this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.HandleSaveAs);
+            // 
+            // showToolStripMenuItem
+            // 
+            this.showToolStripMenuItem.Name = "showToolStripMenuItem";
+            this.showToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
+            this.showToolStripMenuItem.Text = "Show";
+            this.showToolStripMenuItem.Click += new System.EventHandler(this.HandleShowHistory);
             // 
             // clearToolStripMenuItem
             // 
             this.clearToolStripMenuItem.Name = "clearToolStripMenuItem";
-            this.clearToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.clearToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
             this.clearToolStripMenuItem.Text = "Clear";
             this.clearToolStripMenuItem.Click += new System.EventHandler(this.HandleClearHistory);
+            // 
+            // priorityToolStripMenuItem
+            // 
+            this.priorityToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lefttorightToolStripMenuItem,
+            this.algebraicToolStripMenuItem});
+            this.priorityToolStripMenuItem.Name = "priorityToolStripMenuItem";
+            this.priorityToolStripMenuItem.Size = new System.Drawing.Size(70, 24);
+            this.priorityToolStripMenuItem.Text = "Priority";
+            // 
+            // algebraicToolStripMenuItem
+            // 
+            this.algebraicToolStripMenuItem.Name = "algebraicToolStripMenuItem";
+            this.algebraicToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.algebraicToolStripMenuItem.Text = "Algebraic";
+            this.algebraicToolStripMenuItem.Click += new System.EventHandler(this.SetAlgebraicPriority);
+            // 
+            // lefttorightToolStripMenuItem
+            // 
+            this.lefttorightToolStripMenuItem.Name = "lefttorightToolStripMenuItem";
+            this.lefttorightToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.lefttorightToolStripMenuItem.Text = "Left-to-right";
+            this.lefttorightToolStripMenuItem.Click += new System.EventHandler(this.SetLeftToRightPriority);
             // 
             // saveFileDialog
             // 
@@ -566,35 +616,14 @@ namespace FormsCalculator
             this.saveFileDialog.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*";
             this.saveFileDialog.Title = "Save As...";
             // 
-            // saveAsToolStripMenuItem
-            // 
-            this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.saveAsToolStripMenuItem.Text = "Save As...";
-            this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.HandleSaveAs);
-            // 
-            // showToolStripMenuItem
-            // 
-            this.showToolStripMenuItem.Name = "showToolStripMenuItem";
-            this.showToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.showToolStripMenuItem.Text = "Show";
-            this.showToolStripMenuItem.Click += new System.EventHandler(this.HandleShowHistory);
-            // 
-            // openToolStripMenuItem
-            // 
-            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.openToolStripMenuItem.Text = "Open...";
-            this.openToolStripMenuItem.Click += new System.EventHandler(this.HandleOpenHistory);
-            // 
             // openFileDialog
             // 
             this.openFileDialog.FileName = "openFileDialog1";
             this.openFileDialog.Title = "Open History";
             // 
-            // Form1
+            // CalculatorForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 36F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.ClientSize = new System.Drawing.Size(327, 505);
@@ -648,6 +677,9 @@ namespace FormsCalculator
         private System.Windows.Forms.ToolStripMenuItem saveAsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private System.Windows.Forms.ToolStripMenuItem priorityToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem algebraicToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem lefttorightToolStripMenuItem;
     }
 }
 

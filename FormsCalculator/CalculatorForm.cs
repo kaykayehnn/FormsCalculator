@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,9 +15,12 @@ namespace FormsCalculator
     public partial class CalculatorForm : Form
     {
         private readonly int RIGHT_INDENT_PIXELS = 8;
+        private const PriorityMode DEFAULT_PRIORITY_MODE = PriorityMode.LeftToRight;
+
         private readonly Font HISTORY_FONT = new Font("Segoe UI Semibold", 13);
         private readonly Color HISTORY_COLOR = Color.FromArgb(0, 134, 134, 134);
 
+        private PriorityMode priorityMode = DEFAULT_PRIORITY_MODE;
         private Calculator calculator;
         private List<string> history;
         private CalculatorHistoryForm historyForm;
@@ -29,14 +32,21 @@ namespace FormsCalculator
             calculator = new Calculator();
             history = new List<string>();
 
-            // TODO: keyboard support
-            AnyButtonClicked();
+            AttachEventHandlers();
+            // Initialize display
             UpdateDisplay();
 
+            InitializePriorityMenu();
             // TODO: handle percent sign
         }
 
-        private void AnyButtonClicked()
+        private void InitializePriorityMenu()
+        {
+            // This is executed at startup to check the correct menuItem.
+            SetPriorityMode(this.priorityMode);
+        }
+
+        private void AttachEventHandlers()
         {
             // All buttons are inside the tableLayoutPanel
             var controls = tableLayoutPanel.Controls;
@@ -220,6 +230,44 @@ namespace FormsCalculator
             if (historyForm != null)
             {
                 historyForm.UpdateHistory(history.ToArray());
+            }
+        }
+        private void SetAlgebraicPriority(object sender, EventArgs e)
+        {
+            SetPriorityMode(PriorityMode.Algebraic);
+        }
+
+        private void SetLeftToRightPriority(object sender, EventArgs e)
+        {
+            SetPriorityMode(PriorityMode.LeftToRight);
+        }
+
+        private void SetPriorityMode(PriorityMode priorityMode)
+        {
+            ResetPriorityMenuItems();
+
+            switch (priorityMode)
+            {
+                case PriorityMode.Algebraic:
+                    this.algebraicToolStripMenuItem.Checked = true;
+                    break;
+                case PriorityMode.LeftToRight:
+                    this.lefttorightToolStripMenuItem.Checked = true;
+                    break;
+                default:
+                    throw new Exception($"Invariant: Unexpected priority mode: {this.priorityMode}"); ;
+            }
+
+            this.calculator.SetPriorityMode(priorityMode);
+            this.UpdateDisplay();
+        }
+
+        private void ResetPriorityMenuItems()
+        {
+            var priorityMenuItems = this.priorityToolStripMenuItem.DropDownItems;
+            foreach (ToolStripMenuItem menuItem in priorityMenuItems)
+            {
+                menuItem.Checked = false;
             }
         }
     }

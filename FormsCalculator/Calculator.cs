@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -46,12 +46,19 @@ namespace FormsCalculator
         // 2) If current operation has same or equal priority
 
         private Operation equation;
+        private PriorityMode priorityMode;
 
         public Calculator()
         {
             currentOperand = DEFAULT_OPERAND;
             isOperandTouched = false;
             showEquals = false;
+        }
+
+        public void SetPriorityMode(PriorityMode newMode)
+        {
+            this.priorityMode = newMode;
+            this.Clear();
         }
 
         public void EnterKey(char character)
@@ -132,8 +139,8 @@ namespace FormsCalculator
                 var rightValue = double.Parse(this.currentOperand);
                 Operator currentOperator = deepestOperation.Operator;
 
-                var currentPriority = OperatorHelpers.GetPriority(currentOperator);
-                var nextOpPriority = OperatorHelpers.GetPriority(op);
+                var currentPriority = OperatorHelpers.GetPriority(currentOperator, priorityMode);
+                var nextOpPriority = OperatorHelpers.GetPriority(op, priorityMode);
 
                 // If not touched, overwrite operator
                 // TODO: after equals maybe this needs to be a special case

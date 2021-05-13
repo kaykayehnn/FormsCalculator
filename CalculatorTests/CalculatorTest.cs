@@ -551,5 +551,18 @@ namespace CalculatorTests
 
             Assert.AreEqual(result, expected);
         }
+
+        [TestMethod]
+        public void ChangePriorityClearsState()
+        {
+            calc.EnterKey('1');
+            calc.EnterKey('2');
+            calc.SetPriorityMode(PriorityMode.Algebraic);
+
+            var result = calc.GetCurrentOperand();
+            var expected = "0";
+
+            Assert.AreEqual(result, expected);
+        }
     }
 }
