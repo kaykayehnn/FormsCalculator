@@ -32,7 +32,7 @@ namespace FormsCalculator
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CalculatorForm));
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.buttonEquals = new System.Windows.Forms.Button();
-            this.buttonPeriod = new System.Windows.Forms.Button();
+            this.buttonDecimalSeparator = new System.Windows.Forms.Button();
             this.button0 = new System.Windows.Forms.Button();
             this.buttonInvertSign = new System.Windows.Forms.Button();
             this.buttonCE = new System.Windows.Forms.Button();
@@ -79,7 +79,7 @@ namespace FormsCalculator
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel.Controls.Add(this.buttonEquals, 3, 6);
-            this.tableLayoutPanel.Controls.Add(this.buttonPeriod, 2, 6);
+            this.tableLayoutPanel.Controls.Add(this.buttonDecimalSeparator, 2, 6);
             this.tableLayoutPanel.Controls.Add(this.button0, 1, 6);
             this.tableLayoutPanel.Controls.Add(this.buttonInvertSign, 0, 6);
             this.tableLayoutPanel.Controls.Add(this.buttonCE, 1, 1);
@@ -136,22 +136,22 @@ namespace FormsCalculator
             this.buttonEquals.UseVisualStyleBackColor = false;
             this.buttonEquals.Click += new System.EventHandler(this.HandleCalculate);
             // 
-            // buttonPeriod
+            // buttonDecimalSeparator
             // 
-            this.buttonPeriod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
-            this.buttonPeriod.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonPeriod.FlatAppearance.BorderSize = 0;
-            this.buttonPeriod.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
-            this.buttonPeriod.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonPeriod.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonPeriod.Location = new System.Drawing.Point(164, 412);
-            this.buttonPeriod.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonPeriod.Name = "buttonPeriod";
-            this.buttonPeriod.Size = new System.Drawing.Size(77, 63);
-            this.buttonPeriod.TabIndex = 37;
-            this.buttonPeriod.Text = ".";
-            this.buttonPeriod.UseVisualStyleBackColor = false;
-            this.buttonPeriod.Click += new System.EventHandler(this.HandleDecimalSeparatorClick);
+            this.buttonDecimalSeparator.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(250)))));
+            this.buttonDecimalSeparator.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonDecimalSeparator.FlatAppearance.BorderSize = 0;
+            this.buttonDecimalSeparator.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+            this.buttonDecimalSeparator.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDecimalSeparator.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDecimalSeparator.Location = new System.Drawing.Point(164, 412);
+            this.buttonDecimalSeparator.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonDecimalSeparator.Name = "buttonDecimalSeparator";
+            this.buttonDecimalSeparator.Size = new System.Drawing.Size(77, 63);
+            this.buttonDecimalSeparator.TabIndex = 37;
+            this.buttonDecimalSeparator.Text = ".";
+            this.buttonDecimalSeparator.UseVisualStyleBackColor = false;
+            this.buttonDecimalSeparator.Click += new System.EventHandler(this.HandleDecimalSeparatorClick);
             // 
             // button0
             // 
@@ -661,7 +661,7 @@ namespace FormsCalculator
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button buttonEquals;
-        private System.Windows.Forms.Button buttonPeriod;
+        private System.Windows.Forms.Button buttonDecimalSeparator;
         private System.Windows.Forms.Button button0;
         private System.Windows.Forms.Button buttonInvertSign;
         private System.Windows.Forms.Button buttonCE;

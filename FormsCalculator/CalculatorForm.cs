@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -19,8 +21,10 @@ namespace FormsCalculator
 
         private readonly Font HISTORY_FONT = new Font("Segoe UI Semibold", 13);
         private readonly Color HISTORY_COLOR = Color.FromArgb(0, 134, 134, 134);
+        private readonly CultureInfo cultureInfo = Thread.CurrentThread.CurrentCulture;
 
         private PriorityMode priorityMode = DEFAULT_PRIORITY_MODE;
+        
         private Calculator calculator;
         private List<string> history;
         private CalculatorHistoryForm historyForm;
@@ -29,15 +33,17 @@ namespace FormsCalculator
         {
             InitializeComponent();
 
-            calculator = new Calculator();
+            calculator = new Calculator(cultureInfo);
             history = new List<string>();
 
             AttachEventHandlers();
-            // Initialize display
+            // Initialize display at launch
             UpdateDisplay();
 
             InitializePriorityMenu();
-            // TODO: handle percent sign
+            InitializeDecimalSeparator();
+
+            // TODO: keyboard support
         }
 
         private void InitializePriorityMenu()
@@ -46,13 +52,18 @@ namespace FormsCalculator
             SetPriorityMode(this.priorityMode);
         }
 
+        private void InitializeDecimalSeparator()
+        {
+            this.buttonDecimalSeparator.Text = this.cultureInfo.NumberFormat.NumberDecimalSeparator;
+        }
+
         private void AttachEventHandlers()
         {
             // All buttons are inside the tableLayoutPanel
             var controls = tableLayoutPanel.Controls;
             foreach (Control control in controls)
             {
-                if (control.GetType() == typeof(Button))
+                if (control is Button)
                 {
                     control.Click += (s, e) => UpdateDisplay();
                 }

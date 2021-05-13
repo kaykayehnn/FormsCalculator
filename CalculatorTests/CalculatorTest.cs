@@ -1,4 +1,5 @@
 using System;
+using System.Globalization;
 using FormsCalculator;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -455,7 +456,7 @@ namespace CalculatorTests
             calc.Calculate();
 
             var result = calc.GetEquation();
-            var expected = "4 + 5 × 6 ÷ 7 - 8^9 =";
+            var expected = "4 + 5 ï¿½ 6 ï¿½ 7 - 8^9 =";
 
             Assert.AreEqual(result, expected);
         }
@@ -548,8 +549,7 @@ namespace CalculatorTests
 
         [TestMethod]
         [TestCategory("Formatting")]
-        // This test needs to be locale-independent
-        public void TestPositiveFormatting()
+        public void TestDefaultNumberFormatting()
         {
             calc.EnterKey('1');
             calc.EnterKey('2');
@@ -561,7 +561,28 @@ namespace CalculatorTests
             calc.EnterKey('7');
 
             var result = calc.GetCurrentOperand();
-            var expected = 12345.67.ToString("N");
+            var expected = "12,345.67";
+
+            Assert.AreEqual(result, expected);
+        }
+
+        [TestMethod]
+        [TestCategory("Formatting")]
+        public void TestLocalizedNumberFormatting()
+        {
+            var usCulture = CultureInfo.GetCultureInfo("en-US");
+            calc = new Calculator(usCulture);
+            calc.EnterKey('1');
+            calc.EnterKey('2');
+            calc.EnterKey('3');
+            calc.EnterKey('4');
+            calc.EnterKey('5');
+            calc.EnterDecimalSeparator();
+            calc.EnterKey('6');
+            calc.EnterKey('7');
+
+            var result = calc.GetCurrentOperand();
+            var expected = 12345.67.ToString("N", usCulture.NumberFormat);
 
             Assert.AreEqual(result, expected);
         }

@@ -1,5 +1,6 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -26,8 +27,11 @@ namespace FormsCalculator
         // We need to handle repeatedly pressing equals and think how it should be
         // displayed in the equation bar.
         private const string DEFAULT_OPERAND = "0";
-        private readonly string DECIMAL_SEPARATOR = Thread.CurrentThread.CurrentCulture.NumberFormat.NumberDecimalSeparator;
-        private readonly string THOUSANDS_SEPARATOR = Thread.CurrentThread.CurrentCulture.NumberFormat.NumberGroupSeparator;
+        private const string DEFAULT_DECIMAL_SEPARATOR = ".";
+        private const string DEFAULT_THOUSANDS_SEPARATOR = ",";
+
+        private readonly string decimalSeparator;
+        private readonly string thousandsSeparator;
 
         private string currentOperand;
         private bool isOperandTouched;
@@ -53,7 +57,17 @@ namespace FormsCalculator
             currentOperand = DEFAULT_OPERAND;
             isOperandTouched = false;
             showEquals = false;
+
+            this.decimalSeparator = DEFAULT_DECIMAL_SEPARATOR;
+            this.thousandsSeparator = DEFAULT_THOUSANDS_SEPARATOR;
         }
+
+        public Calculator(CultureInfo cultureInfo) : this()
+        {
+            this.decimalSeparator = cultureInfo.NumberFormat.NumberDecimalSeparator;
+            this.thousandsSeparator = cultureInfo.NumberFormat.NumberGroupSeparator;
+        }
+
 
         public void SetPriorityMode(PriorityMode newMode)
         {
@@ -101,17 +115,17 @@ namespace FormsCalculator
             if (!isOperandTouched)
             {
                 // If not touched, enter leading zero.
-                currentOperand = $"0{DECIMAL_SEPARATOR}";
+                currentOperand = $"0{decimalSeparator}";
             }
             else
             {
-                if (currentOperand.Contains(DECIMAL_SEPARATOR))
+                if (currentOperand.Contains(decimalSeparator))
                 {
                     // Do nothing. Already contains one decimal separator.
                 }
                 else
                 {
-                    currentOperand += DECIMAL_SEPARATOR;
+                    currentOperand += decimalSeparator;
                 }
             }
 
@@ -316,6 +330,7 @@ namespace FormsCalculator
         {
             string operand = currentOperand;
 
+            // TODO: can we just use string.Format with current culture here?
             int wholePartLength = DecimalSeparatorIndex();
             if (wholePartLength == -1) wholePartLength = operand.Length;
 
@@ -324,7 +339,7 @@ namespace FormsCalculator
             int endIndex = currentOperand.StartsWith("-") ? 1 : 0;
             while (index > endIndex)
             {
-                operand = operand.Substring(0, index) + THOUSANDS_SEPARATOR + operand.Substring(index);
+                operand = operand.Substring(0, index) + thousandsSeparator + operand.Substring(index);
                 index -= 3;
             }
 
@@ -416,7 +431,7 @@ namespace FormsCalculator
 
         private int DecimalSeparatorIndex()
         {
-            return currentOperand.IndexOf(DECIMAL_SEPARATOR);
+            return currentOperand.IndexOf(decimalSeparator);
         }
     }
 }
