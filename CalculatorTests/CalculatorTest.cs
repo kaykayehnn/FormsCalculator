@@ -127,7 +127,7 @@ namespace CalculatorTests
             calc.EnterKey('4');
             calc.Percentify();
 
-            var result = calc.GetCurrentOperand();
+            var result = calc.Calculate();
             var expected = 0.04;
 
             Assert.AreEqual(result, expected);
@@ -626,5 +626,7 @@ namespace CalculatorTests
 
             Assert.AreEqual(result, expected);
         }
+
+        // TODO: add memory tests
     }
 }
