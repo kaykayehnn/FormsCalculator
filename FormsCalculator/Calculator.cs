@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -27,11 +27,10 @@ namespace FormsCalculator
         // We need to handle repeatedly pressing equals and think how it should be
         // displayed in the equation bar.
         private const string DEFAULT_OPERAND = "0";
-        private const string DEFAULT_DECIMAL_SEPARATOR = ".";
-        private const string DEFAULT_THOUSANDS_SEPARATOR = ",";
 
-        private readonly string decimalSeparator;
-        private readonly string thousandsSeparator;
+        private readonly CultureInfo culture;
+        private string DecimalSeparator => culture.NumberFormat.NumberDecimalSeparator;
+        private string ThousandsSeparator => culture.NumberFormat.NumberGroupSeparator;
 
         private string currentOperand;
         private bool isOperandTouched;
@@ -52,22 +51,27 @@ namespace FormsCalculator
         private Operation equation;
         private PriorityMode priorityMode;
 
-        public Calculator()
+        public Calculator() : this(PriorityMode.Algebraic)
         {
+        }
+
+        public Calculator(PriorityMode priorityMode): this(priorityMode, CultureInfo.InvariantCulture)
+        {
+        }
+
+        public Calculator(CultureInfo cultureInfo) : this(PriorityMode.Algebraic, cultureInfo)
+        {
+        }
+
+        public Calculator(PriorityMode priorityMode, CultureInfo cultureInfo)
+        {
+            this.priorityMode = priorityMode;
+            this.culture = cultureInfo;
+
             currentOperand = DEFAULT_OPERAND;
             isOperandTouched = false;
             showEquals = false;
-
-            this.decimalSeparator = DEFAULT_DECIMAL_SEPARATOR;
-            this.thousandsSeparator = DEFAULT_THOUSANDS_SEPARATOR;
         }
-
-        public Calculator(CultureInfo cultureInfo) : this()
-        {
-            this.decimalSeparator = cultureInfo.NumberFormat.NumberDecimalSeparator;
-            this.thousandsSeparator = cultureInfo.NumberFormat.NumberGroupSeparator;
-        }
-
 
         public void SetPriorityMode(PriorityMode newMode)
         {
@@ -115,17 +119,17 @@ namespace FormsCalculator
             if (!isOperandTouched)
             {
                 // If not touched, enter leading zero.
-                currentOperand = $"0{decimalSeparator}";
+                currentOperand = $"0{DecimalSeparator}";
             }
             else
             {
-                if (currentOperand.Contains(decimalSeparator))
+                if (currentOperand.Contains(DecimalSeparator))
                 {
                     // Do nothing. Already contains one decimal separator.
                 }
                 else
                 {
-                    currentOperand += decimalSeparator;
+                    currentOperand += DecimalSeparator;
                 }
             }
 
@@ -143,10 +147,10 @@ namespace FormsCalculator
                 // TODO: delete previous history and invert sign
             }
 
-            var operand = double.Parse(this.currentOperand);
+            var operand = Parse(this.currentOperand);
             var inverted = -operand;
 
-            this.currentOperand = inverted.ToString();
+            this.currentOperand = Stringify(inverted);
         }
 
         public void EnterOperator(Operator op)
@@ -165,7 +169,7 @@ namespace FormsCalculator
             else
             {
                 var deepestOperation = this.FindDeepestOperation();
-                var rightValue = double.Parse(this.currentOperand);
+                var rightValue = Parse(this.currentOperand);
                 Operator currentOperator = deepestOperation.Operator;
 
                 var currentPriority = OperatorHelpers.GetPriority(currentOperator, priorityMode);
@@ -243,20 +247,20 @@ namespace FormsCalculator
             // TODO: can we do this without using strings?
             if (this.showEquals)
             {
-                // TODO: delete previous history and invert sign
+                // TODO: delete previous history and percentify
             }
 
-            var operand = double.Parse(this.currentOperand);
+            var operand = Parse(this.currentOperand);
             var percent = operand / 100;
 
-            this.currentOperand = percent.ToString();
+            this.currentOperand = Stringify(percent);
         }
 
         public double Calculate()
         {
             if (equation == null)
             {
-                var currentValue = double.Parse(currentOperand);
+                var currentValue = Parse(currentOperand);
                 // This is handled as a special case in GetEquation().
 
                 showEquals = true;
@@ -269,13 +273,13 @@ namespace FormsCalculator
                 Console.WriteLine(123);
                 this.equation = FindDeepestOperation();
 
-                var resultValue = double.Parse(currentOperand);
+                var resultValue = Parse(currentOperand);
                 var resultOperand = new Operand(resultValue);
                 equation.LeftOperand = resultOperand;
 
                 var result = equation.Evaluate();
                 // TODO: save result somewhere in equation to prevent loss of precision
-                currentOperand = result.ToString();
+                currentOperand = Stringify(result);
                 showEquals = true;
                 return result;
             }
@@ -285,13 +289,13 @@ namespace FormsCalculator
                 // Append current operand to the final node of the tree.
                 Operation deepestOperation = FindIncompleteNode();
 
-                var rightValue = double.Parse(currentOperand);
+                var rightValue = Parse(currentOperand);
                 var rightmostOperand = new Operand(rightValue);
                 deepestOperation.RightOperand = rightmostOperand;
 
                 var result = equation.Evaluate();
                 // TODO: save result somewhere to prevent loss of precision
-                currentOperand = result.ToString();
+                currentOperand = Stringify(result);
                 isOperandTouched = false;
                 showEquals = true;
                 return result;
@@ -347,7 +351,7 @@ namespace FormsCalculator
             int endIndex = currentOperand.StartsWith("-") ? 1 : 0;
             while (index > endIndex)
             {
-                operand = operand.Substring(0, index) + thousandsSeparator + operand.Substring(index);
+                operand = operand.Substring(0, index) + ThousandsSeparator + operand.Substring(index);
                 index -= 3;
             }
 
@@ -439,7 +443,17 @@ namespace FormsCalculator
 
         private int DecimalSeparatorIndex()
         {
-            return currentOperand.IndexOf(decimalSeparator);
+            return currentOperand.IndexOf(DecimalSeparator);
+        }
+
+        private double Parse(string s)
+        {
+            return double.Parse(s, this.culture);
+        }
+
+        private string Stringify(double d)
+        {
+            return d.ToString(this.culture);
         }
     }
 }
