@@ -60,6 +60,7 @@
       <DependentUpon>CalculatorHistoryForm.cs</DependentUpon>
     </Compile>
     <Compile Include="IEvaluatable.cs" />
+    <Compile Include="Memory.cs" />
     <Compile Include="Operand.cs" />
     <Compile Include="Operation.cs" />
     <Compile Include="Operator.cs" />
@@ -94,6 +95,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Calculator\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

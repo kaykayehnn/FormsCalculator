@@ -31,6 +31,10 @@ namespace FormsCalculator
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CalculatorForm));
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonMemoryClear = new System.Windows.Forms.Button();
+            this.buttonMemoryRead = new System.Windows.Forms.Button();
+            this.buttonMemoryAdd = new System.Windows.Forms.Button();
+            this.buttonMemorySubtract = new System.Windows.Forms.Button();
             this.buttonEquals = new System.Windows.Forms.Button();
             this.buttonDecimalSeparator = new System.Windows.Forms.Button();
             this.button0 = new System.Windows.Forms.Button();
@@ -78,46 +82,115 @@ namespace FormsCalculator
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel.Controls.Add(this.buttonEquals, 3, 6);
-            this.tableLayoutPanel.Controls.Add(this.buttonDecimalSeparator, 2, 6);
-            this.tableLayoutPanel.Controls.Add(this.button0, 1, 6);
-            this.tableLayoutPanel.Controls.Add(this.buttonInvertSign, 0, 6);
-            this.tableLayoutPanel.Controls.Add(this.buttonCE, 1, 1);
-            this.tableLayoutPanel.Controls.Add(this.buttonPercent, 0, 1);
-            this.tableLayoutPanel.Controls.Add(this.button9, 1, 3);
-            this.tableLayoutPanel.Controls.Add(this.button8, 0, 3);
-            this.tableLayoutPanel.Controls.Add(this.button7, 0, 3);
-            this.tableLayoutPanel.Controls.Add(this.button6, 2, 4);
-            this.tableLayoutPanel.Controls.Add(this.button5, 1, 4);
-            this.tableLayoutPanel.Controls.Add(this.button4, 0, 4);
-            this.tableLayoutPanel.Controls.Add(this.buttonAddition, 3, 5);
-            this.tableLayoutPanel.Controls.Add(this.buttonSubtraction, 3, 4);
-            this.tableLayoutPanel.Controls.Add(this.buttonMultiplication, 3, 3);
-            this.tableLayoutPanel.Controls.Add(this.buttonDivision, 3, 2);
-            this.tableLayoutPanel.Controls.Add(this.buttonSquareRoot, 2, 2);
-            this.tableLayoutPanel.Controls.Add(this.buttonPower, 1, 2);
-            this.tableLayoutPanel.Controls.Add(this.buttonFraction, 0, 2);
-            this.tableLayoutPanel.Controls.Add(this.buttonBackspace, 3, 1);
-            this.tableLayoutPanel.Controls.Add(this.buttonC, 2, 1);
-            this.tableLayoutPanel.Controls.Add(this.button3, 2, 5);
-            this.tableLayoutPanel.Controls.Add(this.button2, 1, 5);
-            this.tableLayoutPanel.Controls.Add(this.button1, 0, 5);
+            this.tableLayoutPanel.Controls.Add(this.buttonMemoryClear, 0, 1);
+            this.tableLayoutPanel.Controls.Add(this.buttonMemoryRead, 1, 1);
+            this.tableLayoutPanel.Controls.Add(this.buttonMemoryAdd, 2, 1);
+            this.tableLayoutPanel.Controls.Add(this.buttonMemorySubtract, 3, 1);
+            this.tableLayoutPanel.Controls.Add(this.buttonEquals, 3, 7);
+            this.tableLayoutPanel.Controls.Add(this.buttonDecimalSeparator, 2, 7);
+            this.tableLayoutPanel.Controls.Add(this.button0, 1, 7);
+            this.tableLayoutPanel.Controls.Add(this.buttonInvertSign, 0, 7);
+            this.tableLayoutPanel.Controls.Add(this.buttonCE, 1, 2);
+            this.tableLayoutPanel.Controls.Add(this.buttonPercent, 0, 2);
+            this.tableLayoutPanel.Controls.Add(this.button9, 1, 4);
+            this.tableLayoutPanel.Controls.Add(this.button8, 0, 4);
+            this.tableLayoutPanel.Controls.Add(this.button7, 0, 4);
+            this.tableLayoutPanel.Controls.Add(this.button6, 2, 5);
+            this.tableLayoutPanel.Controls.Add(this.button5, 1, 5);
+            this.tableLayoutPanel.Controls.Add(this.button4, 0, 5);
+            this.tableLayoutPanel.Controls.Add(this.buttonAddition, 3, 6);
+            this.tableLayoutPanel.Controls.Add(this.buttonSubtraction, 3, 5);
+            this.tableLayoutPanel.Controls.Add(this.buttonMultiplication, 3, 4);
+            this.tableLayoutPanel.Controls.Add(this.buttonDivision, 3, 3);
+            this.tableLayoutPanel.Controls.Add(this.buttonSquareRoot, 2, 3);
+            this.tableLayoutPanel.Controls.Add(this.buttonPower, 1, 3);
+            this.tableLayoutPanel.Controls.Add(this.buttonFraction, 0, 3);
+            this.tableLayoutPanel.Controls.Add(this.buttonBackspace, 3, 2);
+            this.tableLayoutPanel.Controls.Add(this.buttonC, 2, 2);
+            this.tableLayoutPanel.Controls.Add(this.button3, 2, 6);
+            this.tableLayoutPanel.Controls.Add(this.button2, 1, 6);
+            this.tableLayoutPanel.Controls.Add(this.button1, 0, 6);
             this.tableLayoutPanel.Controls.Add(this.richTextBoxResult, 0, 0);
             this.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel.Location = new System.Drawing.Point(0, 28);
+            this.tableLayoutPanel.Location = new System.Drawing.Point(0, 30);
             this.tableLayoutPanel.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.tableLayoutPanel.Name = "tableLayoutPanel";
-            this.tableLayoutPanel.RowCount = 7;
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.00004F));
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.33333F));
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.33333F));
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.33333F));
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.33333F));
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.33333F));
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 13.33333F));
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel.Size = new System.Drawing.Size(327, 477);
+            this.tableLayoutPanel.RowCount = 8;
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.01201F));
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.42686F));
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.42686F));
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.42686F));
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.42686F));
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.42686F));
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.42686F));
+            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.42686F));
+            this.tableLayoutPanel.Size = new System.Drawing.Size(327, 475);
             this.tableLayoutPanel.TabIndex = 5;
+            // 
+            // buttonMemoryClear
+            // 
+            this.buttonMemoryClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.buttonMemoryClear.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonMemoryClear.FlatAppearance.BorderSize = 0;
+            this.buttonMemoryClear.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+            this.buttonMemoryClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonMemoryClear.Location = new System.Drawing.Point(2, 97);
+            this.buttonMemoryClear.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonMemoryClear.Name = "buttonMemoryClear";
+            this.buttonMemoryClear.Size = new System.Drawing.Size(77, 50);
+            this.buttonMemoryClear.TabIndex = 42;
+            this.buttonMemoryClear.Text = "MC";
+            this.buttonMemoryClear.UseVisualStyleBackColor = false;
+            this.buttonMemoryClear.Click += new System.EventHandler(this.HandleMemoryClear);
+            // 
+            // buttonMemoryRead
+            // 
+            this.buttonMemoryRead.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.buttonMemoryRead.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonMemoryRead.FlatAppearance.BorderSize = 0;
+            this.buttonMemoryRead.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+            this.buttonMemoryRead.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonMemoryRead.Location = new System.Drawing.Point(83, 97);
+            this.buttonMemoryRead.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonMemoryRead.Name = "buttonMemoryRead";
+            this.buttonMemoryRead.Size = new System.Drawing.Size(77, 50);
+            this.buttonMemoryRead.TabIndex = 41;
+            this.buttonMemoryRead.Text = "MR";
+            this.buttonMemoryRead.UseVisualStyleBackColor = false;
+            this.buttonMemoryRead.Click += new System.EventHandler(this.HandleMemoryRead);
+            // 
+            // buttonMemoryAdd
+            // 
+            this.buttonMemoryAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.buttonMemoryAdd.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonMemoryAdd.FlatAppearance.BorderSize = 0;
+            this.buttonMemoryAdd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+            this.buttonMemoryAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonMemoryAdd.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonMemoryAdd.Location = new System.Drawing.Point(164, 97);
+            this.buttonMemoryAdd.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonMemoryAdd.Name = "buttonMemoryAdd";
+            this.buttonMemoryAdd.Size = new System.Drawing.Size(77, 50);
+            this.buttonMemoryAdd.TabIndex = 40;
+            this.buttonMemoryAdd.Text = "M+";
+            this.buttonMemoryAdd.UseVisualStyleBackColor = false;
+            this.buttonMemoryAdd.Click += new System.EventHandler(this.HandleMemoryAdd);
+            // 
+            // buttonMemorySubtract
+            // 
+            this.buttonMemorySubtract.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.buttonMemorySubtract.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonMemorySubtract.FlatAppearance.BorderSize = 0;
+            this.buttonMemorySubtract.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
+            this.buttonMemorySubtract.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonMemorySubtract.Location = new System.Drawing.Point(245, 97);
+            this.buttonMemorySubtract.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonMemorySubtract.Name = "buttonMemorySubtract";
+            this.buttonMemorySubtract.Size = new System.Drawing.Size(80, 50);
+            this.buttonMemorySubtract.TabIndex = 39;
+            this.buttonMemorySubtract.Text = "M-";
+            this.buttonMemorySubtract.UseVisualStyleBackColor = false;
+            this.buttonMemorySubtract.Click += new System.EventHandler(this.HandleMemorySubtract);
             // 
             // buttonEquals
             // 
@@ -127,10 +200,10 @@ namespace FormsCalculator
             this.buttonEquals.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.buttonEquals.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonEquals.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEquals.Location = new System.Drawing.Point(245, 412);
+            this.buttonEquals.Location = new System.Drawing.Point(245, 421);
             this.buttonEquals.Margin = new System.Windows.Forms.Padding(2);
             this.buttonEquals.Name = "buttonEquals";
-            this.buttonEquals.Size = new System.Drawing.Size(80, 63);
+            this.buttonEquals.Size = new System.Drawing.Size(80, 52);
             this.buttonEquals.TabIndex = 38;
             this.buttonEquals.Text = "=";
             this.buttonEquals.UseVisualStyleBackColor = false;
@@ -144,10 +217,10 @@ namespace FormsCalculator
             this.buttonDecimalSeparator.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.buttonDecimalSeparator.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDecimalSeparator.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDecimalSeparator.Location = new System.Drawing.Point(164, 412);
+            this.buttonDecimalSeparator.Location = new System.Drawing.Point(164, 421);
             this.buttonDecimalSeparator.Margin = new System.Windows.Forms.Padding(2);
             this.buttonDecimalSeparator.Name = "buttonDecimalSeparator";
-            this.buttonDecimalSeparator.Size = new System.Drawing.Size(77, 63);
+            this.buttonDecimalSeparator.Size = new System.Drawing.Size(77, 52);
             this.buttonDecimalSeparator.TabIndex = 37;
             this.buttonDecimalSeparator.Text = ".";
             this.buttonDecimalSeparator.UseVisualStyleBackColor = false;
@@ -161,10 +234,10 @@ namespace FormsCalculator
             this.button0.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.button0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button0.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button0.Location = new System.Drawing.Point(83, 412);
+            this.button0.Location = new System.Drawing.Point(83, 421);
             this.button0.Margin = new System.Windows.Forms.Padding(2);
             this.button0.Name = "button0";
-            this.button0.Size = new System.Drawing.Size(77, 63);
+            this.button0.Size = new System.Drawing.Size(77, 52);
             this.button0.TabIndex = 36;
             this.button0.Text = "0";
             this.button0.UseVisualStyleBackColor = false;
@@ -177,10 +250,10 @@ namespace FormsCalculator
             this.buttonInvertSign.FlatAppearance.BorderSize = 0;
             this.buttonInvertSign.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.buttonInvertSign.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonInvertSign.Location = new System.Drawing.Point(2, 412);
+            this.buttonInvertSign.Location = new System.Drawing.Point(2, 421);
             this.buttonInvertSign.Margin = new System.Windows.Forms.Padding(2);
             this.buttonInvertSign.Name = "buttonInvertSign";
-            this.buttonInvertSign.Size = new System.Drawing.Size(77, 63);
+            this.buttonInvertSign.Size = new System.Drawing.Size(77, 52);
             this.buttonInvertSign.TabIndex = 35;
             this.buttonInvertSign.Text = "⁺∕₋";
             this.buttonInvertSign.UseVisualStyleBackColor = false;
@@ -193,10 +266,10 @@ namespace FormsCalculator
             this.buttonCE.FlatAppearance.BorderSize = 0;
             this.buttonCE.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.buttonCE.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCE.Location = new System.Drawing.Point(83, 97);
+            this.buttonCE.Location = new System.Drawing.Point(83, 151);
             this.buttonCE.Margin = new System.Windows.Forms.Padding(2);
             this.buttonCE.Name = "buttonCE";
-            this.buttonCE.Size = new System.Drawing.Size(77, 59);
+            this.buttonCE.Size = new System.Drawing.Size(77, 50);
             this.buttonCE.TabIndex = 34;
             this.buttonCE.Text = "CE";
             this.buttonCE.UseVisualStyleBackColor = false;
@@ -209,10 +282,10 @@ namespace FormsCalculator
             this.buttonPercent.FlatAppearance.BorderSize = 0;
             this.buttonPercent.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.buttonPercent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonPercent.Location = new System.Drawing.Point(2, 97);
+            this.buttonPercent.Location = new System.Drawing.Point(2, 151);
             this.buttonPercent.Margin = new System.Windows.Forms.Padding(2);
             this.buttonPercent.Name = "buttonPercent";
-            this.buttonPercent.Size = new System.Drawing.Size(77, 59);
+            this.buttonPercent.Size = new System.Drawing.Size(77, 50);
             this.buttonPercent.TabIndex = 33;
             this.buttonPercent.Text = "%";
             this.buttonPercent.UseVisualStyleBackColor = false;
@@ -226,10 +299,10 @@ namespace FormsCalculator
             this.button9.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button9.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.Location = new System.Drawing.Point(164, 223);
+            this.button9.Location = new System.Drawing.Point(164, 259);
             this.button9.Margin = new System.Windows.Forms.Padding(2);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(77, 59);
+            this.button9.Size = new System.Drawing.Size(77, 50);
             this.button9.TabIndex = 32;
             this.button9.Text = "9";
             this.button9.UseVisualStyleBackColor = false;
@@ -243,10 +316,10 @@ namespace FormsCalculator
             this.button8.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Location = new System.Drawing.Point(83, 223);
+            this.button8.Location = new System.Drawing.Point(2, 259);
             this.button8.Margin = new System.Windows.Forms.Padding(2);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(77, 59);
+            this.button8.Size = new System.Drawing.Size(77, 50);
             this.button8.TabIndex = 31;
             this.button8.Text = "8";
             this.button8.UseVisualStyleBackColor = false;
@@ -260,10 +333,10 @@ namespace FormsCalculator
             this.button7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(2, 223);
+            this.button7.Location = new System.Drawing.Point(83, 259);
             this.button7.Margin = new System.Windows.Forms.Padding(2);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(77, 59);
+            this.button7.Size = new System.Drawing.Size(77, 50);
             this.button7.TabIndex = 30;
             this.button7.Text = "7";
             this.button7.UseVisualStyleBackColor = false;
@@ -277,10 +350,10 @@ namespace FormsCalculator
             this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(164, 286);
+            this.button6.Location = new System.Drawing.Point(164, 313);
             this.button6.Margin = new System.Windows.Forms.Padding(2);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(77, 59);
+            this.button6.Size = new System.Drawing.Size(77, 50);
             this.button6.TabIndex = 29;
             this.button6.Text = "6";
             this.button6.UseVisualStyleBackColor = false;
@@ -294,10 +367,10 @@ namespace FormsCalculator
             this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(83, 286);
+            this.button5.Location = new System.Drawing.Point(83, 313);
             this.button5.Margin = new System.Windows.Forms.Padding(2);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(77, 59);
+            this.button5.Size = new System.Drawing.Size(77, 50);
             this.button5.TabIndex = 28;
             this.button5.Text = "5";
             this.button5.UseVisualStyleBackColor = false;
@@ -311,10 +384,10 @@ namespace FormsCalculator
             this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(2, 286);
+            this.button4.Location = new System.Drawing.Point(2, 313);
             this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(77, 59);
+            this.button4.Size = new System.Drawing.Size(77, 50);
             this.button4.TabIndex = 27;
             this.button4.Text = "4";
             this.button4.UseVisualStyleBackColor = false;
@@ -328,10 +401,10 @@ namespace FormsCalculator
             this.buttonAddition.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.buttonAddition.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAddition.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAddition.Location = new System.Drawing.Point(245, 349);
+            this.buttonAddition.Location = new System.Drawing.Point(245, 367);
             this.buttonAddition.Margin = new System.Windows.Forms.Padding(2);
             this.buttonAddition.Name = "buttonAddition";
-            this.buttonAddition.Size = new System.Drawing.Size(80, 59);
+            this.buttonAddition.Size = new System.Drawing.Size(80, 50);
             this.buttonAddition.TabIndex = 25;
             this.buttonAddition.Text = "+";
             this.buttonAddition.UseVisualStyleBackColor = false;
@@ -345,10 +418,10 @@ namespace FormsCalculator
             this.buttonSubtraction.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.buttonSubtraction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSubtraction.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSubtraction.Location = new System.Drawing.Point(245, 286);
+            this.buttonSubtraction.Location = new System.Drawing.Point(245, 313);
             this.buttonSubtraction.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSubtraction.Name = "buttonSubtraction";
-            this.buttonSubtraction.Size = new System.Drawing.Size(80, 59);
+            this.buttonSubtraction.Size = new System.Drawing.Size(80, 50);
             this.buttonSubtraction.TabIndex = 24;
             this.buttonSubtraction.Text = "-";
             this.buttonSubtraction.UseVisualStyleBackColor = false;
@@ -362,10 +435,10 @@ namespace FormsCalculator
             this.buttonMultiplication.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.buttonMultiplication.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonMultiplication.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonMultiplication.Location = new System.Drawing.Point(245, 223);
+            this.buttonMultiplication.Location = new System.Drawing.Point(245, 259);
             this.buttonMultiplication.Margin = new System.Windows.Forms.Padding(2);
             this.buttonMultiplication.Name = "buttonMultiplication";
-            this.buttonMultiplication.Size = new System.Drawing.Size(80, 59);
+            this.buttonMultiplication.Size = new System.Drawing.Size(80, 50);
             this.buttonMultiplication.TabIndex = 20;
             this.buttonMultiplication.Text = "×";
             this.buttonMultiplication.UseVisualStyleBackColor = false;
@@ -379,10 +452,10 @@ namespace FormsCalculator
             this.buttonDivision.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.buttonDivision.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDivision.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDivision.Location = new System.Drawing.Point(245, 160);
+            this.buttonDivision.Location = new System.Drawing.Point(245, 205);
             this.buttonDivision.Margin = new System.Windows.Forms.Padding(2);
             this.buttonDivision.Name = "buttonDivision";
-            this.buttonDivision.Size = new System.Drawing.Size(80, 59);
+            this.buttonDivision.Size = new System.Drawing.Size(80, 50);
             this.buttonDivision.TabIndex = 16;
             this.buttonDivision.Text = "÷";
             this.buttonDivision.UseVisualStyleBackColor = false;
@@ -396,10 +469,10 @@ namespace FormsCalculator
             this.buttonSquareRoot.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.buttonSquareRoot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSquareRoot.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSquareRoot.Location = new System.Drawing.Point(164, 160);
+            this.buttonSquareRoot.Location = new System.Drawing.Point(164, 205);
             this.buttonSquareRoot.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSquareRoot.Name = "buttonSquareRoot";
-            this.buttonSquareRoot.Size = new System.Drawing.Size(77, 59);
+            this.buttonSquareRoot.Size = new System.Drawing.Size(77, 50);
             this.buttonSquareRoot.TabIndex = 15;
             this.buttonSquareRoot.Text = "√𝑥";
             this.buttonSquareRoot.UseVisualStyleBackColor = false;
@@ -412,10 +485,10 @@ namespace FormsCalculator
             this.buttonPower.FlatAppearance.BorderSize = 0;
             this.buttonPower.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.buttonPower.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonPower.Location = new System.Drawing.Point(83, 160);
+            this.buttonPower.Location = new System.Drawing.Point(83, 205);
             this.buttonPower.Margin = new System.Windows.Forms.Padding(2);
             this.buttonPower.Name = "buttonPower";
-            this.buttonPower.Size = new System.Drawing.Size(77, 59);
+            this.buttonPower.Size = new System.Drawing.Size(77, 50);
             this.buttonPower.TabIndex = 14;
             this.buttonPower.Text = "𝑥ʸ";
             this.buttonPower.UseVisualStyleBackColor = false;
@@ -428,10 +501,10 @@ namespace FormsCalculator
             this.buttonFraction.FlatAppearance.BorderSize = 0;
             this.buttonFraction.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.buttonFraction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonFraction.Location = new System.Drawing.Point(2, 160);
+            this.buttonFraction.Location = new System.Drawing.Point(2, 205);
             this.buttonFraction.Margin = new System.Windows.Forms.Padding(2);
             this.buttonFraction.Name = "buttonFraction";
-            this.buttonFraction.Size = new System.Drawing.Size(77, 59);
+            this.buttonFraction.Size = new System.Drawing.Size(77, 50);
             this.buttonFraction.TabIndex = 13;
             this.buttonFraction.Text = "¹/𝑥";
             this.buttonFraction.UseVisualStyleBackColor = false;
@@ -444,10 +517,10 @@ namespace FormsCalculator
             this.buttonBackspace.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.buttonBackspace.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBackspace.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonBackspace.Location = new System.Drawing.Point(245, 97);
+            this.buttonBackspace.Location = new System.Drawing.Point(245, 151);
             this.buttonBackspace.Margin = new System.Windows.Forms.Padding(2);
             this.buttonBackspace.Name = "buttonBackspace";
-            this.buttonBackspace.Size = new System.Drawing.Size(80, 59);
+            this.buttonBackspace.Size = new System.Drawing.Size(80, 50);
             this.buttonBackspace.TabIndex = 12;
             this.buttonBackspace.Text = "⌫";
             this.buttonBackspace.UseVisualStyleBackColor = false;
@@ -460,10 +533,10 @@ namespace FormsCalculator
             this.buttonC.FlatAppearance.BorderSize = 0;
             this.buttonC.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.buttonC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonC.Location = new System.Drawing.Point(164, 97);
+            this.buttonC.Location = new System.Drawing.Point(164, 151);
             this.buttonC.Margin = new System.Windows.Forms.Padding(2);
             this.buttonC.Name = "buttonC";
-            this.buttonC.Size = new System.Drawing.Size(77, 59);
+            this.buttonC.Size = new System.Drawing.Size(77, 50);
             this.buttonC.TabIndex = 11;
             this.buttonC.Text = "C";
             this.buttonC.UseVisualStyleBackColor = false;
@@ -477,10 +550,10 @@ namespace FormsCalculator
             this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(164, 349);
+            this.button3.Location = new System.Drawing.Point(164, 367);
             this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(77, 59);
+            this.button3.Size = new System.Drawing.Size(77, 50);
             this.button3.TabIndex = 4;
             this.button3.Text = "3";
             this.button3.UseVisualStyleBackColor = false;
@@ -494,10 +567,10 @@ namespace FormsCalculator
             this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(83, 349);
+            this.button2.Location = new System.Drawing.Point(83, 367);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(77, 59);
+            this.button2.Size = new System.Drawing.Size(77, 50);
             this.button2.TabIndex = 4;
             this.button2.Text = "2";
             this.button2.UseVisualStyleBackColor = false;
@@ -511,10 +584,10 @@ namespace FormsCalculator
             this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(187)))), ((int)(((byte)(187)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(2, 349);
+            this.button1.Location = new System.Drawing.Point(2, 367);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(77, 59);
+            this.button1.Size = new System.Drawing.Size(77, 50);
             this.button1.TabIndex = 2;
             this.button1.Text = "1";
             this.button1.UseVisualStyleBackColor = false;
@@ -542,7 +615,7 @@ namespace FormsCalculator
             this.priorityToolStripMenuItem});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(327, 28);
+            this.menuStrip.Size = new System.Drawing.Size(327, 30);
             this.menuStrip.TabIndex = 6;
             this.menuStrip.Text = "menuStrip";
             // 
@@ -555,7 +628,7 @@ namespace FormsCalculator
             this.clearToolStripMenuItem});
             this.historyToolStripMenuItem.Name = "historyToolStripMenuItem";
             this.historyToolStripMenuItem.ShortcutKeyDisplayString = "";
-            this.historyToolStripMenuItem.Size = new System.Drawing.Size(70, 24);
+            this.historyToolStripMenuItem.Size = new System.Drawing.Size(70, 26);
             this.historyToolStripMenuItem.Text = "History";
             // 
             // openToolStripMenuItem
@@ -592,7 +665,7 @@ namespace FormsCalculator
             this.lefttorightToolStripMenuItem,
             this.algebraicToolStripMenuItem});
             this.priorityToolStripMenuItem.Name = "priorityToolStripMenuItem";
-            this.priorityToolStripMenuItem.Size = new System.Drawing.Size(70, 24);
+            this.priorityToolStripMenuItem.Size = new System.Drawing.Size(70, 26);
             this.priorityToolStripMenuItem.Text = "Priority";
             // 
             // lefttorightToolStripMenuItem
@@ -680,6 +753,10 @@ namespace FormsCalculator
         private System.Windows.Forms.ToolStripMenuItem priorityToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem algebraicToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem lefttorightToolStripMenuItem;
+        private System.Windows.Forms.Button buttonMemoryClear;
+        private System.Windows.Forms.Button buttonMemoryRead;
+        private System.Windows.Forms.Button buttonMemoryAdd;
+        private System.Windows.Forms.Button buttonMemorySubtract;
     }
 }
 

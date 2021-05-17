@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -50,6 +50,7 @@ namespace FormsCalculator
 
         private Operation equation;
         private PriorityMode priorityMode;
+        private Memory memory;
 
         public Calculator() : this(PriorityMode.Algebraic)
         {
@@ -68,10 +69,14 @@ namespace FormsCalculator
             this.priorityMode = priorityMode;
             this.culture = cultureInfo;
 
+            this.memory = new Memory();
+
             currentOperand = DEFAULT_OPERAND;
             isOperandTouched = false;
             showEquals = false;
         }
+
+        public bool HasMemory => this.memory.IsSet;
 
         public void SetPriorityMode(PriorityMode newMode)
         {
@@ -160,7 +165,7 @@ namespace FormsCalculator
             // Base case
             if (equation == null)
             {
-                var leftValue = double.Parse(this.currentOperand);
+                var leftValue = Parse(this.currentOperand);
                 var leftOperand = new Operand(leftValue);
                 var eq = new Operation(op, leftOperand);
 
@@ -254,6 +259,30 @@ namespace FormsCalculator
             var percent = operand / 100;
 
             this.currentOperand = Stringify(percent);
+        }
+
+        public void MemoryAdd()
+        {
+            var operand = Parse(this.currentOperand);
+            this.memory.Add(operand);
+        }
+
+        public void MemorySubtract()
+        {
+            var operand = Parse(this.currentOperand);
+            this.memory.Subtract(operand);
+        }
+
+        public void MemoryRead()
+        {
+            double memoryValue = this.memory.Read();
+            this.currentOperand = Stringify(memoryValue);
+            this.equation = null;
+        }
+
+        public void MemoryClear()
+        {
+            this.memory.Clear();
         }
 
         public double Calculate()

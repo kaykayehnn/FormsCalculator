@@ -44,6 +44,7 @@ namespace FormsCalculator
             InitializeDecimalSeparator();
 
             // TODO: keyboard support
+            // TODO: change memory button styling
         }
 
         private void InitializePriorityMenu()
@@ -94,6 +95,11 @@ namespace FormsCalculator
             richTextBoxResult.DeselectAll();
 
             richTextBoxResult.ResumeLayout();
+
+            // TODO: these two can use data binding
+            buttonMemoryClear.Enabled = calculator.HasMemory;
+            buttonMemoryRead.Enabled = calculator.HasMemory;
+            // TODO: change memory button styling
         }
 
         private void HandleNumberButtonClick(object sender, EventArgs e)
@@ -286,6 +292,26 @@ namespace FormsCalculator
             {
                 menuItem.Checked = false;
             }
+        }
+
+        private void HandleMemoryClear(object sender, EventArgs e)
+        {
+            calculator.MemoryClear();
+        }
+
+        private void HandleMemoryRead(object sender, EventArgs e)
+        {
+            calculator.MemoryRead();
+        }
+
+        private void HandleMemoryAdd(object sender, EventArgs e)
+        {
+            calculator.MemoryAdd();
+        }
+
+        private void HandleMemorySubtract(object sender, EventArgs e)
+        {
+            calculator.MemorySubtract();
         }
     }
 }
